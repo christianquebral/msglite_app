@@ -9,7 +9,7 @@ setup(
     url="https://github.com/christianquebral/msglite_app",
     author="Christian Quebral",
     author_email="christianquebral.dev@gmail.com",
-    scripts=["app/msglite.py"],
+    scripts=["app/msglite"],
     packages=find_packages("src"),
     package_dir={"": "src"},
     classifiers=[
