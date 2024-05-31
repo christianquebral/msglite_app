@@ -13,10 +13,10 @@ def join_session(session_name=None, user_name=None):
 @click.command()
 @click.argument("command", required=1)
 @click.option(
-    "--session-name", help="Custom session name to join or create", default=False
+    "--session-name", help="Custom session name to join or create", default=None
 )
 @click.option(
-    "--user-name", help="Custom username to be used in an active session", default=False
+    "--user-name", help="Custom username to be used in an active session", default=None
 )
 def main(command, session_name=None, user_name=None):
     """
