@@ -6,9 +6,6 @@ import click
 import sys
 
 
-
-
-
 @click.command()
 @click.argument("command", required=1)
 @click.option(
