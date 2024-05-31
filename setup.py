@@ -16,5 +16,8 @@ setup(
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
     ],
-    install_requires=[],
+    install_requires=[
+        "click==8.1.7",
+        "kafka-python==2.0.2"
+    ],
 )
