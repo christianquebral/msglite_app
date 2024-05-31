@@ -6,8 +6,7 @@ import click
 import sys
 
 
-def join_session(session_name=None, user_name=None):
-    print("Placeholder join-session function")
+
 
 
 @click.command()
@@ -23,4 +22,5 @@ def main(command, session_name=None, user_name=None):
     Main entrypoint function to be called from msglite CLI.
     """
     fn_dict = {"create-session": "create_session", "join-session": "join_session"}
-    exec(f"{fn_dict[command]}({session_name}, {user_name})")
+    args = {"session_name": session_name, "user_name": user_name}
+    exec(f"{fn_dict[command]}({args})")

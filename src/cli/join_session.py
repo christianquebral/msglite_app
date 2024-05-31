@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 
 
-def join_session(*args, **kwargs):
+def join_session(args: dict = None):
     """
-    Attempt to join a session
+    Join a session via the join-session command.
+    This function attempts to subscribe to an existing Kafka topic and returns
+    new messages from that topic.
     """
-    pass
+    print("In the join-session function")
+    print(args)
