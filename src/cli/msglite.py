@@ -1,9 +1,9 @@
+#!/usr/bin/env python3
+
+from .create_session import create_session
+from .join_session import join_session
 import click
 import sys
-
-
-def create_session(session_name=None, user_name=None):
-    print("Placeholder create-session function")
 
 
 def join_session(session_name=None, user_name=None):
@@ -20,7 +20,7 @@ def join_session(session_name=None, user_name=None):
 )
 def main(command, session_name=None, user_name=None):
     """
-    Main module for msglite program.
+    Main entrypoint function to be called from msglite CLI.
     """
     fn_dict = {"create-session": "create_session", "join-session": "join_session"}
-    exec(f"{fn_dict[command]}()")
+    exec(f"{fn_dict[command]}({session_name}, {user_name})")
