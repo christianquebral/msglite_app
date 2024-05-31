@@ -1,27 +1,26 @@
-import argparse
+import click
 import sys
 
 
-def create_session():
+def create_session(session_name=None, user_name=None):
     print("Placeholder create-session function")
 
 
-def main():
+def join_session(session_name=None, user_name=None):
+    print("Placeholder join-session function")
+
+
+@click.command()
+@click.argument("command", required=1)
+@click.option(
+    "--session-name", help="Custom session name to join or create", default=False
+)
+@click.option(
+    "--user-name", help="Custom username to be used in an active session", default=False
+)
+def main(command, session_name=None, user_name=None):
     """
     Main module for msglite program.
     """
-    fn_dict = {
-        "create-session": "create_session"
-    }
-
-    parser = argparse.ArgumentParser(
-        description="A CLI-based private text messaging program"
-    )
-
-    # TBD this is a temporary solution until I figure out better ways for
-    # executing python functions via arguments.
-    parser.add_argument("cmd", type=str, help="create")
-
-    arg = parser.parse_args().arg
-    
-    exec(f"{fn_dict[arg.arg]}()")
+    fn_dict = {"create-session": "create_session", "join-session": "join_session"}
+    exec(f"{fn_dict[command]}()")
